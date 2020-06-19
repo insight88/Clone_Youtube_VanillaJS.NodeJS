@@ -1,0 +1,7 @@
+{
+    "presets": ["@babel/preset-env"]
+}
+
+// babel : JS 문법을 구문법으로 번역
+// 문법 종류에 따라 env, stage 1~3이 있음.
+// preset stage를 env로 설정
