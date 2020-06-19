@@ -21,6 +21,8 @@ const PORT = 4000;
 const handleListening = () =>
   console.log(`Listening on: http://localhost:${PORT}`);
 // arrow function,  함수 이름 = (arguements) => 함수 기능 명령
+// implicit return, {}없이 적을 경우 arrow의 오른쪽 값을 암시적으로 return
+// arrow의 오른쪽에 {}를 적을 경우 implicit return 기능이 작동하지 않아 return 명령어가 필요
 
 const handleHome = (req, res) => res.send("Hello from my home");
 // response, / 페이지를 불러와서 "~"를 응답
