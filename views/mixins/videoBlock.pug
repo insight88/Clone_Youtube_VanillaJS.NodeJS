@@ -1,0 +1,10 @@
+mixin videoBlock(video = {})
+    .videoBlock
+        a(href=routes.videoDetail(video.id))
+            video.videoBlock__thumbnail(src=video.videoFile, controls=true)
+            h4.videoBlock__title=video.title
+            h6.videoBlock__views=video.views 
+//- 모든 video에 적용되는 공통 템플릿 videoBlock 함수를 선언
+//- video = {} : default video가 null임을 선언
+//- video 오브젝트에 담긴 정보들 중 videoFile, title, views를 html tag로 표시
+//- controls=true : 페이지가 로드되면 자동으로 비디오파일이 재생가능하도록 표시

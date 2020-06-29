@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        <script src="https://kit.fontawesome.com/4b1c2bac93.js" crossorigin="anonymous"></script>
+        title  #{pageTitle} | #{siteName}
+    body
+        header
+            h1 Wetube
+        include ../partials/header
+        main
+            block content
+            //- content가 들어갈 공간을 마련
+        include ../partials/footer
+        //- html에서 특정 부분의 템플릿만 저장된 폴더 partials에서 footer.pug를 불러와서 포함시킴

@@ -1,0 +1,26 @@
+header.header
+    .header__column
+        a(href=routes.home)
+            i.fab.fa-youtube
+        //- youtube 아이콘에 home으로 링크되는 route를 설정
+    .header__column
+        form(action=routes.search, method="get")
+            input(type="text", placeholder="Search by term...", name="term")
+        //- form에 input이 들어오면 routes.search로 연결하고 URL 뒤에 ?term=text을 추가
+            //- search 바에서 text를 입력하면 term 변수dml 값으로 저장
+    .header__column
+        ul
+            if !user.isAuthenticated
+                li
+                    a(href=routes.join) Join
+                li
+                    a(href=routes.login) Log In
+            //- 인증된 유저일 때, 헤더에 join과 login 버튼을 표시
+            else 
+                li
+                    a(href=`/videos${routes.upload}`) Upload
+                li
+                    a(href=routes.userDetail(user.id)) Profile
+                li
+                    a(href=routes.logout) Log Out
+            //- 인증되지 않은 유저일 때, 헤더에 upload, profile, logout을 표시

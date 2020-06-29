@@ -1,0 +1,17 @@
+//- pug는 express의 view engine으로 템플릿 언어로 html을 더 보기 좋게 표현
+//- layout의 main.pug를 템플릿으로 하고 이에 확장하기 위해 extends를 사용
+//- tab을 활용하여 parent, child 관계를 정의
+
+extends layouts/main
+include mixins/videoBlock 
+//- 비슷한 디자인 템플릿이 적용되는 컨텐츠들(video)에 적용되는 mixin을 include하기
+
+block content
+    .videos
+        each item in videos
+            +videoBlock({
+                id:item.id,
+                title:item.title,
+                views:item.views,
+                videoFile:item.videoFile
+            })
