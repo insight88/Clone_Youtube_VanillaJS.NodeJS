@@ -3,20 +3,21 @@ import routes from "../routes";
 export const home = (req, res) => {
   res.render("home", { pageTitle: "Home", videos });
 };
-// home 화면을 render할 때 videos 데이터를 같이 전송
+// home 화면을 render할 때 pageTitle 변수, videos라는 array를 같이 전송
 
 export const search = (req, res) => {
   const {
     query : { term: searchingBy }
   } = req;
   // const searchingBy = req.query.term 은 ES6 이전의 코딩 방식
-  // const {} = req 방식은 ES6의 새로운 코딩 방식
+  // const { query : { term } } = req 방식은 ES6의 새로운 코딩 방식
+  // search.pug <- main.pug <- header.pug <- form.input으로 받은 term을 request로 받아 searchingBy로 저장,
   res.render("search", { pageTitle: "Search", searchingBy, videos });
+  // 저장받은 searchingBy를 search.pug를 render할 때 전송, searchingBy:"searchingBy"의 줄임 표시
 };
-// search 화면이 render될 때, pageTitle과 searchingBy를 pug 파일에 전송, searchingBy : "searchingBy"의 줄임 표시
-// 검색된 term을 {term:searchingBy}라는 query 형태로 저장
+// search.pug 화면에서 검색된 term을 { term:searchingBy }라는 query 형태로 저장
 // term 이외의 조건들이 추가될 경우 (ex.sort, filter 등) query에 오브젝트 형태로 저장
-// ?term=android&sort=alphabet&filter=down
+// ex) query : { term:~, sort:~, filter:~ }     =>     URL에서  ?term=android&sort=alphabet&filter=down 
 
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });

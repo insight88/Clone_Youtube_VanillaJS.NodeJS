@@ -8,7 +8,7 @@ export const postJoin = (req, res) => {
     const {
         body: { name, email, password, password2 }
     } = req;
-    // join.pug의 body에서 입력받은 값들을 request로 받아서 query에 저장
+    // join.pug의 body에서 submit한 값들을 request로 받아서 query에 저장
     if (password !== password2) {
         res.status(400);
         res.render("join", { pageTitle: "Join" });

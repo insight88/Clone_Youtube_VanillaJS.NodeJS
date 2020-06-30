@@ -9,6 +9,8 @@ const globalRouter = express.Router();
 // globalRouter가 user request에 대해서 여러 루트로 분기되는 역할을 수행하도록 선언
 globalRouter.get(routes.join, getJoin);
 globalRouter.post(routes.join, postJoin);
+// get 메소드 : read only, 성공 시 200 HTML code와 함께 XML (or) JSON을 리턴, URL 뒤에 ?term=text을 추가
+// post 메소드 : 새로운 리소스를 생성, 서버로 전송할 때 추가적인 데이터를 body에 포함할 수 있음
 
 globalRouter.get(routes.login, getLogin);
 globalRouter.post(routes.login, postLogin);
