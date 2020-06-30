@@ -3,6 +3,8 @@ html
     head
         <script src="https://kit.fontawesome.com/4b1c2bac93.js" crossorigin="anonymous"></script>
         title  #{pageTitle} | #{siteName}
+        //- #{pageTitle} : Cotroller에서 res.render 메소드에 포함되어 전달받음, 한 템플릿에만 적용되는 변수를 받음
+        //- #{siteName} : middleware에서 locals로 선언된 전역변수를 전달받음, 모든 템플릿에 적용되는 변수를 받음
     body
         header
             h1 Wetube
