@@ -22,3 +22,4 @@ Cloning Youtube with Vanilla and NodeJS
 // dependencies : 프로젝트가 실행되기 위해 필수적으로 실행해야 할 modules
 // devDependencies : 프로그래머가 사용하려고 설정한 module
 // npm install nodemon -D : dependencies가 아닌 곳에 nodemon을 설치
+// npm install eslint -g : eslint를 프로젝트에 상관없이 global하게 설치하고 사용

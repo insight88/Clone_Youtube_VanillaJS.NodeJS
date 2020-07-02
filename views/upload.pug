@@ -2,9 +2,11 @@ extends layouts/main
 
 block content
     .form-container
-        form(action=`/videos${routes.upload}`, method="post")
+        form(action=`/videos${routes.upload}`, method="post", enctype="multipart/form-data")
             label(for="file") Video File
-            input(type="file", id="file", name="file", required=true)
+            input(type="file", id="file", name="videoFile", required=true, accept="video/*")
             input(type="text", placeholder="Title", name="title", required=true)
             textarea(name="description", placeholder="Description", required=true)
             input(type="submit", value="Upload Video")
+        //- enctype : 인코딩 방법, form-data 방식은 파일이나 이미지를 서버에 전송할 때 쓰임
+            //- accept="video/*" : 비디오 형식의 파일만 input file로 받아들임

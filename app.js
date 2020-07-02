@@ -16,6 +16,8 @@ app.set("view engine", "pug")
 // pug와 express에는 view 파일들의 위치에 관한 기본 설정이 있음
 // html 파일들의 위치에 관한 default 디렉토리는 '/views' 디렉토리
 
+app.use("/uploads", express.static("uploads"));
+// express.static("폴더명") : 정적 파일을 제공하는 익스프레스 내장 미들웨어
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
