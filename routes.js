@@ -1,4 +1,5 @@
 // Global
+
 const HOME = "/";
 const JOIN = "/join";
 const LOGIN = "/login";
@@ -9,6 +10,8 @@ const SEARCH = "/search";
 
 const USERS = "/users";
 const USER_DETAIL = "/:id";
+// id = 1일 때, /users/1 로 접속
+// :id는 id가 변하는 값으로 express가 인식하는 문법
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
@@ -27,6 +30,7 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
+
   userDetail: id => {
     if (id) {
       return `/users/${id}`;
@@ -34,10 +38,13 @@ const routes = {
       return USER_DETAIL;
     }
   },
+  // user id가 있을 때, /users/id(숫자) URL로 연결
+
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
   upload: UPLOAD,
+
   videoDetail: id => {
     if (id) {
       return `/videos/${id}`;
@@ -45,6 +52,8 @@ const routes = {
       return VIDEO_DETAIL;
     }
   },
+  // video id가 있을 때, /videos/id(숫자) URL로 연결
+
   editVideo: id => {
     if (id) {
       return `/videos/${id}/edit`;
@@ -52,6 +61,7 @@ const routes = {
       return EDIT_VIDEO;
     }
   },
+  
   deleteVideo: id => {
     if (id) {
       return `/videos/${id}/delete`;
